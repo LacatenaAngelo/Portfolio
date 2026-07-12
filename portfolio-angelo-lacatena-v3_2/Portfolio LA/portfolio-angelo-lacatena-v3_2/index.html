@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angelo Lacatena® — Progettazione e Sviluppo di Esperienze Digitali</title>
+  <meta name="description" content="Portfolio di Angelo Lacatena, web designer e developer. Progettazione e sviluppo di interfacce, applicazioni interattive ed esperienze digitali in tecnologie web native." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══ PRELOADER ══ -->
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader-core">
+      <p class="loader-name">Angelo Lacatena<sup>®</sup></p>
+      <p class="loader-sub mono">Web Designer &amp; Developer — Esperienze digitali</p>
+    </div>
+    <div class="loader-track"><span class="loader-bar" data-bar></span></div>
+    <p class="loader-count mono"><span data-count>0</span>%</p>
+  </div>
+
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+
+  <!-- ══ CURSORE ══ -->
+  <div class="cursor" data-cursor aria-hidden="true"><span>Apri&nbsp;↗</span></div>
+
+  <!-- ══ SCENA 3D (fissa, dietro a tutto) ══ -->
+  <canvas class="gl" data-gl aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ══ BARRA DI AVANZAMENTO ══ -->
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+  <!-- ══ NAVIGAZIONE ══ -->
+  <header class="nav" data-nav>
+    <a class="nav-brand roll" href="#top" data-text="AL®"><span>AL®</span></a>
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a class="roll" href="#progetti" data-text="Progetti"><span>Progetti</span></a>
+      <a class="roll" href="#profilo" data-text="Profilo"><span>Profilo</span></a>
+      <a class="roll" href="#contatti" data-text="Contatti"><span>Contatti</span></a>
+    </nav>
+    <a class="nav-status" href="#contatti"><span class="dot" aria-hidden="true"></span>Disponibile per collaborazioni</a>
+  </header>
+
+  <main id="main">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" id="top">
+      <div class="hero-meta mono line-reveal" style="--d:.15s">
+        <span>Web Design &amp; Development</span>
+        <span>Interfacce · Applicazioni · Agenti AI</span>
+      </div>
+
+      <h1 class="hero-title" aria-label="Angelo Lacatena">
+        <span class="line" style="--d:.25s"><span>Angelo</span></span>
+        <span class="line" style="--d:.4s"><span>Lacatena<sup>®</sup></span></span>
+      </h1>
+
+      <div class="hero-base">
+        <p class="hero-sub line-reveal" style="--d:.6s">
+          Progettazione e sviluppo di esperienze digitali interattive.
+          Interfacce, applicazioni e giochi realizzati in tecnologie web
+          native — HTML, CSS e JavaScript — con rigore progettuale e
+          attenzione alla performance.
+        </p>
+        <div class="hero-actions line-reveal" style="--d:.75s">
+          <a class="btn btn-fill magnetic" href="#progetti"><span class="btn-label">Consulta i progetti</span></a>
+          <a class="btn btn-line magnetic" href="#contatti"><span class="btn-label">Contattami</span></a>
+        </div>
+      </div>
+
+      <div class="hero-scroll mono line-reveal" style="--d:.9s" aria-hidden="true">
+        <span>Scorri per esplorare</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ══ DICHIARAZIONE ══ -->
+    <section class="statement">
+      <p class="statement-text reveal">
+        Ogni progetto nasce da un principio: <em>la tecnologia deve servire
+        l'esperienza</em>. Nessun framework superfluo, nessun elemento
+        decorativo privo di funzione — soltanto codice scritto a mano,
+        misurato e verificato.
+      </p>
+      <div class="statement-figures reveal">
+        <div class="figure"><p class="figure-n mono"><span data-counter="15000">0</span>+</p><p class="figure-l">Righe di codice scritte</p></div>
+        <div class="figure"><p class="figure-n mono"><span data-counter="1200">0</span>+</p><p class="figure-l">Ore di progettazione e sviluppo</p></div>
+        <div class="figure"><p class="figure-n mono"><span data-counter="12">0</span>+</p><p class="figure-l">Tecnologie e strumenti impiegati</p></div>
+      </div>
+    </section>
+
+    <!-- ══ PROGETTI ══ -->
+    <section class="works" id="progetti">
+      <div class="works-head">
+        <p class="eyebrow reveal">Indice dei lavori</p>
+        <h2 class="works-title reveal">Progetti <em>selezionati</em></h2>
+        <p class="works-intro reveal">
+          Una selezione di lavori che documenta metodo, competenze tecniche
+          ed evoluzione professionale. Ogni progetto è consultabile nella
+          sua versione integrale.
+        </p>
+      </div>
+
+      <!-- 01: Kairo OS -->
+      <article class="work reveal">
+        <a class="work-media tilt" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/kairo-os.jpg" alt="Sezione principale della landing page Kairo OS, impaginazione editoriale su fondo scuro" loading="lazy" />
+          <span class="tilt-glare" aria-hidden="true"></span>
+        </a>
+        <div class="work-info">
+          <p class="work-index mono">(01)</p>
+          <p class="work-kind mono">Landing page di prodotto — CSS Grid / Motion design</p>
+          <h3 class="work-name">Kairo OS</h3>
+          <p class="work-desc">
+            Pagina di presentazione per una piattaforma SaaS concettuale.
+            Effetti di parallasse guidati dal puntatore, contatori animati e
+            transizioni allo scorrimento gestite tramite IntersectionObserver.
+            Impostazione editoriale, realizzata senza librerie esterne.
+          </p>
+          <div class="work-tags">
+            <span>landing page</span><span>css grid</span><span>motion</span><span class="tag-live">● demo disponibile</span>
+          </div>
+          <a class="work-link roll" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-text="Consulta la demo ↗"><span>Consulta la demo ↗</span></a>
+        </div>
+      </article>
+
+      <!-- 02: E-mobicity -->
+      <article class="work work-flip reveal">
+        <a class="work-media tilt" href="https://emobicity.github.io/" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/emobicity.jpg" alt="Pagina principale del sito E-mobicity dedicato alla mobilità sostenibile" loading="lazy" />
+          <span class="tilt-glare" aria-hidden="true"></span>
+        </a>
+        <div class="work-info">
+          <p class="work-index mono">(02)</p>
+          <p class="work-kind mono">Progetto istituzionale — Sviluppo in team</p>
+          <h3 class="work-name">E-mobicity</h3>
+          <p class="work-desc">
+            Sito dedicato alla mobilità sostenibile, realizzato in
+            collaborazione con l'IIS Alessandro Volta di Lodi e pubblicato su
+            GitHub Pages. Contributo personale: architettura della pagina e
+            sezione dedicata al prototipo di veicolo condiviso.
+          </p>
+          <div class="work-tags">
+            <span>istituzionale</span><span>team</span><span class="tag-live">● pubblicato</span>
+          </div>
+          <a class="work-link roll" href="https://emobicity.github.io/" target="_blank" rel="noopener" data-text="Visita il sito ↗"><span>Visita il sito ↗</span></a>
+        </div>
+      </article>
+
+      <!-- 03: Portfolio V1 -->
+      <article class="work reveal">
+        <a class="work-media tilt" href="v1/index.html" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/portfolio-v1.jpg" alt="Pagina principale della prima edizione del portfolio, impostata come scheda tecnica" loading="lazy" />
+          <span class="tilt-glare" aria-hidden="true"></span>
+        </a>
+        <div class="work-info">
+          <p class="work-index mono">(03)</p>
+          <p class="work-kind mono">Archivio storico — Edizione precedente</p>
+          <h3 class="work-name">Portfolio Vol. 01</h3>
+          <p class="work-desc">
+            La prima edizione di questo portfolio, impostata come scheda
+            tecnica. Conservata in archivio quale documentazione del percorso
+            professionale e del progressivo affinamento del metodo di lavoro.
+          </p>
+          <div class="work-tags">
+            <span>archivio</span><span>editoriale</span><span>vol. 01</span>
+          </div>
+          <a class="work-link roll" href="v1/index.html" target="_blank" rel="noopener" data-text="Consulta l'archivio ↗"><span>Consulta l'archivio ↗</span></a>
+        </div>
+      </article>
+
+      <!-- 04: Neon Drift -->
+      <article class="work work-flip reveal">
+        <a class="work-media tilt" href="projects/neon-drift/index.html" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/neon-drift.jpg" alt="Schermata del videogioco Neon Drift: pista al neon con scia luminosa" loading="lazy" />
+          <span class="tilt-glare" aria-hidden="true"></span>
+        </a>
+        <div class="work-info">
+          <p class="work-index mono">(04)</p>
+          <p class="work-kind mono">Applicazione videoludica — JavaScript / Grafica interattiva</p>
+          <h3 class="work-name">Neon Drift</h3>
+          <p class="work-desc">
+            Videogioco arcade di tipo endless runner sviluppato interamente in
+            JavaScript nativo. Ciclo di rendering basato su
+            requestAnimationFrame, sistema particellare, scie dinamiche e
+            motore audio generato in tempo reale tramite oscillatori, senza
+            alcuna risorsa sonora esterna.
+          </p>
+          <div class="work-tags">
+            <span>arcade</span><span>grafica 2d</span><span>audio in tempo reale</span><span class="tag-live">● demo disponibile</span>
+          </div>
+          <a class="work-link roll" href="projects/neon-drift/index.html" target="_blank" rel="noopener" data-text="Avvia la demo ↗"><span>Avvia la demo ↗</span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══ PROFILO ══ -->
+    <section class="about" id="profilo">
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <figure class="about-photo tilt">
+            <svg class="about-visual" viewBox="0 0 480 480" width="480" height="480" role="img" aria-label="Monogramma AL — Angelo Lacatena">
+              <defs>
+                <radialGradient id="alGlow" cx="50%" cy="42%" r="70%">
+                  <stop offset="0%" stop-color="#171a2b" />
+                  <stop offset="100%" stop-color="#0b0d15" />
+                </radialGradient>
+              </defs>
+              <rect width="480" height="480" fill="url(#alGlow)" />
+              <g stroke="#8a94ff" fill="none" opacity="0.22">
+                <circle cx="240" cy="216" r="150" stroke-width="1" />
+                <circle cx="240" cy="216" r="112" stroke-width="1" stroke-dasharray="3 7" />
+                <ellipse cx="240" cy="216" rx="150" ry="52" stroke-width="1" />
+                <ellipse cx="240" cy="216" rx="150" ry="52" stroke-width="1" transform="rotate(60 240 216)" />
+                <ellipse cx="240" cy="216" rx="150" ry="52" stroke-width="1" transform="rotate(-60 240 216)" />
+              </g>
+              <g fill="#8a94ff" opacity="0.9">
+                <circle cx="240" cy="66" r="3.5" />
+                <circle cx="390" cy="216" r="3" />
+                <circle cx="110" cy="290" r="2.5" />
+              </g>
+              <text x="240" y="252" text-anchor="middle" font-family="'Clash Display','Arial Black',sans-serif" font-weight="700" font-size="118" fill="#f4f5fc" letter-spacing="-4">AL<tspan font-size="34" fill="#8a94ff" dy="-58">®</tspan></text>
+              <text x="240" y="416" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="4" fill="#8b90a6">WEB DESIGNER &amp; DEVELOPER</text>
+            </svg>
+            <span class="tilt-glare" aria-hidden="true"></span>
+          </figure>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow reveal">Profilo professionale</p>
+          <h2 class="about-title reveal">Metodo, precisione,<br /><em>risultati</em>.</h2>
+          <div class="about-text reveal">
+            <p>
+              Sono Angelo Lacatena, web designer e developer, diplomato in <strong>Informatica e Telecomunicazioni</strong>.
+              Progetto e realizzo interfacce web curate nel dettaglio,
+              coniugando impostazione editoriale, codice ordinato e attenzione
+              costante alla performance. Allo sviluppo front-end affianco la
+              progettazione di <strong>agenti AI</strong> e sistemi di
+              automazione con strumenti quali Claude e Lovable.
+            </p>
+          </div>
+          <div class="about-stack reveal">
+            <div class="stack-row"><p class="mono stack-label">Linguaggi</p><p>HTML5 · CSS3 · JavaScript · PHP · SQL · C++</p></div>
+            <div class="stack-row"><p class="mono stack-label">Strumenti</p><p>GitHub Pages · DevTools · Claude · Lovable · Pacchetto Office</p></div>
+            <div class="stack-row"><p class="mono stack-label">Lingue</p><p>Italiano (madrelingua) · Inglese (B2)</p></div>
+            <div class="stack-row"><p class="mono stack-label">Ulteriori informazioni</p><p>Patente B, automunito</p></div>
+          </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTATTI ══ -->
+    <footer class="contact" id="contatti">
+      <p class="eyebrow reveal">Contatti</p>
+      <a class="contact-giant reveal" href="mailto:angelo.lacatena.027@gmail.com" aria-label="Invia una email ad Angelo Lacatena">
+        <span class="giant-line">Collabo<em>ria</em>mo</span>
+      </a>
+      <p class="contact-sub reveal">
+        Per proposte professionali, opportunità di collaborazione o richieste
+        di informazioni. Ogni messaggio riceve una risposta puntuale.
+      </p>
+      <div class="contact-links reveal">
+        <a class="roll big-roll" href="mailto:angelo.lacatena.027@gmail.com" data-text="angelo.lacatena.027@gmail.com"><span>angelo.lacatena.027@gmail.com</span></a>
+        <a class="roll big-roll" href="tel:+393314370727" data-text="+39 331 437 0727"><span>+39 331 437 0727</span></a>
+      </div>
+      <div class="contact-foot">
+        <p class="mono">© 2026 Angelo Lacatena</p>
+        <p class="mono">Design, codice e intelligenza artificiale</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
