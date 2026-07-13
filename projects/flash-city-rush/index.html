@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flash City Rush | Progetto di Angelo Lacatena (in lavorazione)</title>
+    <meta
+      name="description"
+      content="Mini gioco open-world top-down stile vecchi giochi Flash, con mappa cittadina, guida, traffico e missioni. Progetto in lavorazione di Angelo Lacatena."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="back-pill" href="../../index.html">&larr; Portfolio di Angelo</a>
+
+    <main class="game-shell" aria-label="Flash City Rush">
+      <canvas id="game" aria-label="Mappa giocabile di Flash City Rush"></canvas>
+
+      <header class="hud">
+        <div class="brand">
+          <span class="brand-badge" aria-hidden="true">F</span>
+          <span>Flash City Rush</span>
+        </div>
+
+        <div class="wanted" id="wanted">
+          <span>Heat</span>
+          <strong id="heatText">0</strong>
+        </div>
+
+        <div class="stats">
+          <div>
+            <span>Cash</span>
+            <strong id="cashText">$0</strong>
+          </div>
+          <div>
+            <span>Mission</span>
+            <strong id="missionText">Free roam</strong>
+          </div>
+        </div>
+      </header>
+
+      <aside class="brief" id="brief">
+        <p class="eyebrow">Retro sandbox &middot; in lavorazione</p>
+        <h1>Flash City Rush</h1>
+        <p>
+          Una mini mappa open-world: guida, scendi dall'auto, evita il traffico
+          e completa consegne veloci in stile giochi Flash. Il motore di gioco
+          &egrave; ancora in lavorazione: qui sotto trovi HUD e struttura gi&agrave; pronti.
+        </p>
+        <button id="startButton" type="button">Prova lo stato attuale</button>
+      </aside>
+
+      <aside class="mission-panel">
+        <p id="objectiveText">Motore di gioco in arrivo &mdash; struttura e HUD pronti.</p>
+        <div class="meter">
+          <span id="timerText">00:00</span>
+          <i id="timerBar"></i>
+        </div>
+      </aside>
+
+      <section class="big-map" id="bigMap" aria-label="Mappa completa">
+        <canvas id="mapCanvas" aria-label="Mappa completa"></canvas>
+      </section>
+
+      <footer class="controls">
+        <span>Guida/cammina</span>
+        <kbd>WASD</kbd>
+        <kbd>Frecce</kbd>
+        <span>Azione</span>
+        <kbd>E</kbd>
+        <span>Mappa</span>
+        <kbd>M</kbd>
+        <span>Freno/sprint</span>
+        <kbd>Spazio</kbd>
+      </footer>
+
+      <div class="touch-controls" aria-label="Comandi touch">
+        <button data-touch="up" type="button">Up</button>
+        <button data-touch="left" type="button">Left</button>
+        <button data-touch="right" type="button">Right</button>
+        <button data-touch="down" type="button">Down</button>
+        <button data-touch="action" type="button">E</button>
+      </div>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

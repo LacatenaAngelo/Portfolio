@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B1420"/>
+  <path d="M8 8h10M8 8v10M56 8H46M56 8v10M8 56h10M8 56V46M56 56H46M56 56V46" stroke="#4FB6FF" stroke-width="3" stroke-linecap="round"/>
+  <text x="32" y="41" font-family="'IBM Plex Mono', monospace" font-size="24" font-weight="700" fill="#FFB238" text-anchor="middle">AL</text>
+</svg>
