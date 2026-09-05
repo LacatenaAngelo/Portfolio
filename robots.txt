@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Versione archiviata del portfolio: contenuto duplicato, non indicizzare
+Disallow: /v1/
+
+Sitemap: https://lacatenaangelo.it/sitemap.xml
