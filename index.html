@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angelo Lacatena® — Progettazione e Sviluppo di Esperienze Digitali</title>
   <meta name="description" content="Portfolio di Angelo Lacatena, web designer e developer. Progettazione e sviluppo di interfacce, applicazioni interattive ed esperienze digitali in tecnologie web native." />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
@@ -26,6 +30,32 @@
   <meta name="twitter:title" content="Angelo Lacatena — Progettazione e Sviluppo di Esperienze Digitali" />
   <meta name="twitter:description" content="Portfolio di Angelo Lacatena, web designer e developer. Progettazione e sviluppo di interfacce, applicazioni interattive ed esperienze digitali in tecnologie web native." />
   <meta name="twitter:image" content="https://lacatenaangelo.it/assets/profile.jpg" />
+
+  <!-- ══ NOME DEL SITO NEI RISULTATI DI RICERCA ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lacatenaangelo.it/#website",
+        "url": "https://lacatenaangelo.it/",
+        "name": "Angelo Lacatena",
+        "alternateName": "Angelo Lacatena®",
+        "inLanguage": "it-IT",
+        "publisher": { "@id": "https://lacatenaangelo.it/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lacatenaangelo.it/#person",
+        "name": "Angelo Lacatena",
+        "url": "https://lacatenaangelo.it/",
+        "image": "https://lacatenaangelo.it/assets/profile.jpg",
+        "jobTitle": "Web Designer & Developer"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -122,26 +152,26 @@
         </p>
       </div>
 
-      <!-- 01: Kairo OS -->
+      <!-- 01: Sosta e Relax -->
       <article class="work reveal">
-        <a class="work-media tilt" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-view>
-          <img src="assets/covers/kairo-os.jpg" alt="Sezione principale della landing page Kairo OS, impaginazione editoriale su fondo scuro" loading="lazy" />
+        <a class="work-media tilt" href="https://www.sostaerelax.com" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/sosta-e-relax.jpg" alt="Pagina principale del sito Sosta e Relax: camper al tramonto su una spiaggia, con menu di navigazione in evidenza" loading="lazy" />
           <span class="tilt-glare" aria-hidden="true"></span>
         </a>
         <div class="work-info">
           <p class="work-index mono">(01)</p>
-          <p class="work-kind mono">Landing page di prodotto — CSS Grid / Motion design</p>
-          <h3 class="work-name">Kairo OS</h3>
+          <p class="work-kind mono">Sito WordPress multilingua — Manutenzione e gestione contenuti</p>
+          <h3 class="work-name">Sosta e Relax</h3>
           <p class="work-desc">
-            Pagina di presentazione per una piattaforma SaaS concettuale.
-            Effetti di parallasse guidati dal puntatore, contatori animati e
-            transizioni allo scorrimento gestite tramite IntersectionObserver.
-            Impostazione editoriale, realizzata senza librerie esterne.
+            Portale della rete Sosta e Relax: aree camper, B&amp;B e case
+            vacanza in tutta Italia. Realizzato in WordPress, di cui curo la
+            manutenzione continuativa, l'aggiornamento dei contenuti e le
+            versioni multilingua.
           </p>
           <div class="work-tags">
-            <span>landing page</span><span>css grid</span><span>motion</span><span class="tag-live">● demo disponibile</span>
+            <span>wordpress</span><span>multilingua</span><span>manutenzione</span><span class="tag-live">● online</span>
           </div>
-          <a class="work-link roll" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-text="Consulta la demo ↗"><span>Consulta la demo ↗</span></a>
+          <a class="work-link roll" href="https://www.sostaerelax.com" target="_blank" rel="noopener" data-text="Visita il sito ↗"><span>Visita il sito ↗</span></a>
         </div>
       </article>
 
@@ -168,25 +198,26 @@
         </div>
       </article>
 
-      <!-- 03: Portfolio V1 -->
+      <!-- 03: Kairo OS -->
       <article class="work reveal">
-        <a class="work-media tilt" href="v1/index.html" target="_blank" rel="noopener" data-view>
-          <img src="assets/covers/portfolio-v1.jpg" alt="Pagina principale della prima edizione del portfolio, impostata come scheda tecnica" loading="lazy" />
+        <a class="work-media tilt" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-view>
+          <img src="assets/covers/kairo-os.jpg" alt="Sezione principale della landing page Kairo OS, impaginazione editoriale su fondo scuro" loading="lazy" />
           <span class="tilt-glare" aria-hidden="true"></span>
         </a>
         <div class="work-info">
           <p class="work-index mono">(03)</p>
-          <p class="work-kind mono">Archivio storico — Edizione precedente</p>
-          <h3 class="work-name">Portfolio Vol. 01</h3>
+          <p class="work-kind mono">Landing page di prodotto — CSS Grid / Motion design</p>
+          <h3 class="work-name">Kairo OS</h3>
           <p class="work-desc">
-            La prima edizione di questo portfolio, impostata come scheda
-            tecnica. Conservata in archivio quale documentazione del percorso
-            professionale e del progressivo affinamento del metodo di lavoro.
+            Pagina di presentazione per una piattaforma SaaS concettuale.
+            Effetti di parallasse guidati dal puntatore, contatori animati e
+            transizioni allo scorrimento gestite tramite IntersectionObserver.
+            Impostazione editoriale, realizzata senza librerie esterne.
           </p>
           <div class="work-tags">
-            <span>archivio</span><span>editoriale</span><span>vol. 01</span>
+            <span>landing page</span><span>css grid</span><span>motion</span><span class="tag-live">● demo disponibile</span>
           </div>
-          <a class="work-link roll" href="v1/index.html" target="_blank" rel="noopener" data-text="Consulta l'archivio ↗"><span>Consulta l'archivio ↗</span></a>
+          <a class="work-link roll" href="projects/kairo-os/index.html" target="_blank" rel="noopener" data-text="Consulta la demo ↗"><span>Consulta la demo ↗</span></a>
         </div>
       </article>
 
@@ -263,7 +294,6 @@
             <div class="stack-row"><p class="mono stack-label">Linguaggi</p><p>HTML5 · CSS3 · JavaScript · PHP · SQL · C++</p></div>
             <div class="stack-row"><p class="mono stack-label">Strumenti</p><p>GitHub Pages · DevTools · Claude · Lovable · Pacchetto Office</p></div>
             <div class="stack-row"><p class="mono stack-label">Lingue</p><p>Italiano (madrelingua) · Inglese (B2)</p></div>
-            <div class="stack-row"><p class="mono stack-label">Ulteriori informazioni</p><p>Patente B, automunito</p></div>
           </div>
           </div>
       </div>
