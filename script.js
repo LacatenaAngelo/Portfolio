@@ -357,3 +357,171 @@ window.addEventListener("scroll", () => {
     t = setTimeout(fit, 120);
   }, { passive: true });
 })();
+
+/* ── TESTIMONIANZE: scroll orizzontale guidato dallo scroll verticale ──
+   Contenuti reali, raccolti da conversazioni con i clienti: per
+   aggiungere, correggere o riordinare una testimonianza è sufficiente
+   modificare l'array `testimonials` qui sotto — il markup delle card
+   viene generato da qui, un'unica fonte di verità.
+
+   Su desktop (puntatore fine, nessun reduced-motion) la sezione resta
+   "pinnata" tramite position:sticky mentre lo scroll verticale viene
+   letto e tradotto in un translateX sul track (nessuno scroll-jacking:
+   il browser continua a gestire lo scroll nativamente, si legge solo
+   la posizione). Su touch o con prefers-reduced-motion attivo si passa
+   a uno scroll orizzontale nativo con scroll-snap, senza alcun calcolo
+   JS: è la variante più naturale e meno rischiosa su mobile. */
+(() => {
+  const testimonials = [
+    {
+      quote: "Ma è bellissimo adesso. Bravissimo!",
+      author: "Stefano",
+      role: "",
+    },
+    {
+      quote: "Bravissimo. Molto bello il sito.",
+      author: "Piera",
+      role: "",
+    },
+    {
+      quote: "Questo lavoro eccezionale che hai fatto sul sito dobbiamo passarlo anche sull'app. Spettacolo.",
+      author: "Luca",
+      role: "",
+    },
+    {
+      quote: "Non va bene… va benissimo. Siete dei professionisti. Grazie.",
+      author: "Marco",
+      role: "",
+    },
+    {
+      quote: "Ragazzo molto serio, ha concluso il progetto dato da me in solo 48 ore. Sono molto soddisfatto.",
+      author: "David",
+      role: "",
+    },
+  ];
+
+  const section = document.querySelector("[data-testimonials]");
+  const stage = document.querySelector("[data-testimonials-stage]");
+  const track = document.querySelector("[data-testimonials-track]");
+  const bar = document.querySelector("[data-testimonials-bar]");
+  const currentEl = document.querySelector("[data-testimonials-current]");
+  const totalEl = document.querySelector("[data-testimonials-total]");
+  if (!section || !stage || !track) return;
+
+  const total = testimonials.length;
+  track.innerHTML = testimonials
+    .map((t, i) => `
+      <article class="testimonial-card">
+        <p class="testimonial-index mono" aria-hidden="true">${String(i + 1).padStart(2, "0")}</p>
+        <blockquote class="testimonial-quote"><p>“${t.quote}”</p></blockquote>
+        <footer class="testimonial-meta">
+          <cite class="testimonial-author">${t.author}</cite>
+          ${t.role ? `<span class="testimonial-role mono">${t.role}</span>` : ""}
+        </footer>
+      </article>`)
+    .join("");
+  if (totalEl) totalEl.textContent = String(total).padStart(2, "0");
+
+  const cards = Array.from(track.children);
+  const useNative = isTouch || reduceMotion;
+  section.classList.toggle("testimonials--native", useNative);
+
+  if (useNative) {
+    /* Variante nativa: il pin/translate via JS è disattivato, ma barra e
+       contatore restano sincronizzati leggendo lo scrollLeft nativo del
+       track (scroll-snap), così il progresso "01 — 04" resta vivo anche
+       su touch invece di restare bloccato sul valore iniziale statico. */
+    const updateNative = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const progress = max > 0 ? Math.min(1, Math.max(0, track.scrollLeft / max)) : 0;
+      if (bar) bar.style.width = progress * 100 + "%";
+      if (currentEl) currentEl.textContent = String(Math.round(progress * (total - 1)) + 1).padStart(2, "0");
+    };
+    let nTicking = false;
+    track.addEventListener("scroll", () => {
+      if (!nTicking) {
+        nTicking = true;
+        requestAnimationFrame(() => { nTicking = false; updateNative(); });
+      }
+    }, { passive: true });
+    updateNative();
+    return;
+  }
+
+  let distance = 0; // px orizzontali totali da percorrere
+  let start = 0;    // offset verticale (documento) di inizio pin
+  let span = 1;     // altezza di scroll verticale da tradurre in movimento
+
+  const measure = () => {
+    /* Il track parte dal bordo interno del padding sinistro dello stage:
+       per far coincidere il bordo destro dell'ultima card con il margine
+       destro (invece di fermarsi un padding troppo a destra, tagliando il
+       testo) la distanza da percorrere deve includere anche il padding su
+       entrambi i lati, non solo la differenza tra le larghezze. */
+    const stagePad = parseFloat(getComputedStyle(stage).paddingLeft) || 0;
+    distance = Math.max(0, track.scrollWidth - stage.clientWidth + stagePad * 2);
+    section.style.height = `calc(100svh + ${distance}px)`;
+    start = section.getBoundingClientRect().top + window.scrollY;
+    span = Math.max(1, section.offsetHeight - window.innerHeight);
+  };
+
+  /* Frazioni di scroll "ferme" a inizio e fine: appena si entra nella
+     sezione la prima card non deve scappare via subito, e appena l'ultima
+     arriva a destinazione deve restare leggibile e completamente ferma
+     prima che la sezione rilasci lo scroll verso "Profilo professionale"
+     (altrimenti si rischia di fermarsi a metà transizione, con l'ultima
+     card tagliata a bordo schermo). */
+  const HOLD_START = 0.12;
+  const HOLD_END = 0.12;
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const raw = Math.min(1, Math.max(0, (window.scrollY - start) / span));
+    let progress;
+    if (raw <= HOLD_START) progress = 0;
+    else if (raw >= 1 - HOLD_END) progress = 1;
+    else progress = (raw - HOLD_START) / (1 - HOLD_START - HOLD_END);
+    track.style.transform = `translate3d(${(-progress * distance).toFixed(1)}px,0,0)`;
+    if (bar) bar.style.width = progress * 100 + "%";
+
+    /* L'indice "attivo" (frazionario) segue linearmente il progresso:
+       0 = prima card, total-1 = ultima. Usarlo anche per l'opacità (invece
+       della distanza dal centro dello stage) garantisce che la prima e
+       l'ultima card raggiungano sempre piena opacità: geometricamente non
+       possono mai passare per il centro dello stage, essendo agli estremi
+       della corsa orizzontale. */
+    const activeFloat = progress * (total - 1);
+    const activeIdx = Math.round(activeFloat);
+    cards.forEach((card, i) => {
+      const fade = 1 - Math.min(1, Math.abs(i - activeFloat)) * 0.55;
+      card.style.opacity = fade.toFixed(2);
+      card.style.transform = `scale(${(0.97 + fade * 0.03).toFixed(3)})`;
+    });
+    if (currentEl) currentEl.textContent = String(activeIdx + 1).padStart(2, "0");
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  measure();
+  update();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  let resizeT;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(() => { measure(); update(); }, 150);
+  }, { passive: true });
+
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => { measure(); update(); }).observe(track);
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => { measure(); update(); });
+  }
+})();
