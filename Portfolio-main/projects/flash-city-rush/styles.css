@@ -1,0 +1,402 @@
+:root {
+  --ink: #151515;
+  --paper: #fff4c5;
+  --panel: rgba(255, 244, 197, 0.92);
+  --line: #151515;
+  --red: #ef3d2f;
+  --blue: #2f75ff;
+  --green: #2bb66f;
+  --gold: #ffbf2e;
+  --purple: #7d4dff;
+  --white: #ffffff;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: #111;
+  font-family:
+    "Trebuchet MS", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+button,
+kbd {
+  font: inherit;
+}
+
+.back-pill {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 8;
+  padding: 9px 14px;
+  border: 3px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--panel);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: transform 120ms ease;
+}
+
+.back-pill:hover,
+.back-pill:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+.game-shell {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #111;
+}
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 12px;
+  padding: 16px clamp(14px, 4vw, 34px);
+  pointer-events: none;
+}
+
+.brand,
+.wanted,
+.stats > div,
+.brief,
+.mission-panel,
+.controls,
+.big-map {
+  border: 3px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
+}
+
+.brand,
+.wanted,
+.stats,
+.mission-panel,
+.controls,
+.brief,
+.big-map,
+.touch-controls {
+  pointer-events: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 9px 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brand-badge {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--paper);
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.wanted {
+  min-width: 86px;
+  min-height: 54px;
+  padding: 8px 10px;
+}
+
+.stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.stats > div {
+  min-width: 126px;
+  min-height: 54px;
+  padding: 8px 10px;
+}
+
+.wanted span,
+.stats span,
+.controls span,
+.eyebrow {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.wanted strong,
+.stats strong {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.05;
+}
+
+.wanted strong {
+  color: var(--red);
+}
+
+.stats strong {
+  color: var(--blue);
+}
+
+.brief {
+  position: absolute;
+  left: clamp(16px, 7vw, 84px);
+  bottom: clamp(96px, 15vh, 150px);
+  z-index: 6;
+  width: min(520px, calc(100vw - 32px));
+  padding: clamp(20px, 4vw, 30px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.brief.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--red);
+}
+
+h1,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-size: 4.1rem;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.brief p {
+  max-width: 42ch;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.brief button {
+  min-height: 48px;
+  padding: 10px 18px;
+  color: var(--paper);
+  border: 3px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--red);
+  box-shadow: 4px 4px 0 var(--line);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brief button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--line);
+}
+
+.mission-panel {
+  position: absolute;
+  top: 88px;
+  right: clamp(14px, 4vw, 34px);
+  z-index: 4;
+  width: min(360px, calc(100vw - 28px));
+  padding: 12px;
+}
+
+.mission-panel p {
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.meter {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.meter span {
+  font-weight: 900;
+}
+
+.meter i {
+  display: block;
+  height: 12px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--green);
+  transform-origin: left center;
+}
+
+.controls {
+  position: absolute;
+  left: clamp(14px, 4vw, 34px);
+  right: clamp(14px, 4vw, 34px);
+  bottom: 14px;
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: calc(100vw - 28px);
+  padding: 8px 10px;
+}
+
+kbd {
+  min-width: 38px;
+  padding: 3px 7px;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 2px 2px 0 var(--line);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.big-map {
+  position: absolute;
+  inset: 74px 34px 70px 34px;
+  z-index: 5;
+  display: none;
+  overflow: hidden;
+}
+
+.big-map.is-visible {
+  display: block;
+}
+
+.touch-controls {
+  position: absolute;
+  right: 14px;
+  bottom: 82px;
+  z-index: 4;
+  display: none;
+  grid-template-columns: 54px 54px 54px;
+  grid-template-rows: 54px 54px 54px;
+  gap: 8px;
+}
+
+.touch-controls button {
+  color: var(--ink);
+  border: 3px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 3px 3px 0 var(--line);
+  font-weight: 900;
+}
+
+.touch-controls [data-touch="up"] {
+  grid-column: 2;
+}
+
+.touch-controls [data-touch="left"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.touch-controls [data-touch="right"] {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.touch-controls [data-touch="down"] {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.touch-controls [data-touch="action"] {
+  grid-column: 3;
+  grid-row: 3;
+  background: var(--gold);
+}
+
+@media (max-width: 820px) {
+  .game-shell {
+    min-height: 620px;
+  }
+
+  .hud {
+    grid-template-columns: 1fr auto;
+  }
+
+  .stats {
+    grid-column: 1 / -1;
+    justify-content: stretch;
+  }
+
+  .stats > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .mission-panel {
+    top: 146px;
+    left: 14px;
+    right: auto;
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .touch-controls {
+    display: grid;
+  }
+
+  .back-pill {
+    top: 12px;
+    left: 12px;
+    padding: 7px 11px;
+    font-size: 0.7rem;
+  }
+}

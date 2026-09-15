@@ -1,0 +1,101 @@
+<svg viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interfaccia astratta di Kairo OS">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b1e20"/>
+      <stop offset="100%" stop-color="#0e0f10"/>
+    </linearGradient>
+    <linearGradient id="barA" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#e94b35"/>
+      <stop offset="100%" stop-color="#f0836f"/>
+    </linearGradient>
+    <linearGradient id="barB" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#118a83"/>
+      <stop offset="100%" stop-color="#3fc7bd"/>
+    </linearGradient>
+    <linearGradient id="barC" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#315fd4"/>
+      <stop offset="100%" stop-color="#7d9bf0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="1600" height="86" fill="#141516"/>
+  <circle cx="46" cy="43" r="9" fill="#d7ed57"/>
+  <rect x="70" y="34" width="150" height="18" rx="9" fill="#3a3d3f"/>
+  <rect x="700" y="30" width="200" height="26" rx="13" fill="#202326"/>
+  <rect x="1420" y="24" width="120" height="38" rx="10" fill="#d7ed57"/>
+
+  <!-- sidebar -->
+  <rect x="0" y="86" width="220" height="914" fill="#141516"/>
+  <g fill="#35383a">
+    <rect x="34" y="150" width="152" height="14" rx="7"/>
+    <rect x="34" y="196" width="120" height="14" rx="7"/>
+    <rect x="34" y="242" width="140" height="14" rx="7"/>
+    <rect x="34" y="288" width="100" height="14" rx="7"/>
+  </g>
+  <rect x="20" y="182" width="200" height="46" rx="10" fill="#202326"/>
+  <rect x="34" y="196" width="120" height="14" rx="7" fill="#d7ed57"/>
+
+  <!-- main dashboard cards -->
+  <rect x="256" y="126" width="1320" height="152" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="290" y="156" width="140" height="16" rx="8" fill="#8a8d8f"/>
+  <rect x="290" y="188" width="220" height="42" rx="10" fill="#f7f7f2"/>
+  <rect x="560" y="156" width="140" height="16" rx="8" fill="#8a8d8f"/>
+  <rect x="560" y="188" width="180" height="42" rx="10" fill="#d7ed57"/>
+  <rect x="830" y="156" width="140" height="16" rx="8" fill="#8a8d8f"/>
+  <rect x="830" y="188" width="200" height="42" rx="10" fill="#3fc7bd"/>
+  <rect x="1100" y="156" width="140" height="16" rx="8" fill="#8a8d8f"/>
+  <rect x="1100" y="188" width="160" height="42" rx="10" fill="#f0836f"/>
+
+  <!-- bar chart panel -->
+  <rect x="256" y="306" width="760" height="430" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="290" y="336" width="220" height="18" rx="9" fill="#f7f7f2"/>
+  <g>
+    <rect x="310" y="560" width="56" height="140" rx="8" fill="url(#barA)"/>
+    <rect x="386" y="500" width="56" height="200" rx="8" fill="url(#barB)"/>
+    <rect x="462" y="440" width="56" height="260" rx="8" fill="url(#barC)"/>
+    <rect x="538" y="520" width="56" height="180" rx="8" fill="url(#barA)"/>
+    <rect x="614" y="470" width="56" height="230" rx="8" fill="url(#barB)"/>
+    <rect x="690" y="410" width="56" height="290" rx="8" fill="url(#barC)"/>
+    <rect x="766" y="460" width="56" height="240" rx="8" fill="url(#barA)"/>
+    <rect x="842" y="380" width="56" height="320" rx="8" fill="url(#barB)"/>
+    <rect x="918" y="430" width="56" height="270" rx="8" fill="url(#barC)"/>
+  </g>
+  <line x1="290" y1="716" x2="976" y2="716" stroke="#2a2d2f" stroke-width="2"/>
+
+  <!-- timeline panel -->
+  <rect x="1040" y="306" width="536" height="204" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="1072" y="336" width="200" height="16" rx="8" fill="#f7f7f2"/>
+  <line x1="1072" y1="410" x2="1544" y2="410" stroke="#2a2d2f" stroke-width="3"/>
+  <circle cx="1110" cy="410" r="9" fill="#d7ed57"/>
+  <circle cx="1240" cy="410" r="9" fill="#3fc7bd"/>
+  <circle cx="1370" cy="410" r="9" fill="#f0836f"/>
+  <circle cx="1500" cy="410" r="9" fill="#5c6063"/>
+  <rect x="1072" y="450" width="150" height="12" rx="6" fill="#54585a"/>
+  <rect x="1072" y="472" width="220" height="12" rx="6" fill="#35383a"/>
+
+  <!-- kanban panel -->
+  <rect x="1040" y="532" width="536" height="204" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="1072" y="562" width="150" height="16" rx="8" fill="#f7f7f2"/>
+  <rect x="1072" y="602" width="150" height="100" rx="12" fill="#141516"/>
+  <rect x="1236" y="602" width="150" height="130" rx="12" fill="#141516"/>
+  <rect x="1400" y="602" width="150" height="70" rx="12" fill="#141516"/>
+  <rect x="1090" y="620" width="110" height="10" rx="5" fill="#4a4d4f"/>
+  <rect x="1090" y="640" width="80" height="10" rx="5" fill="#3a3d3f"/>
+  <rect x="1254" y="620" width="110" height="10" rx="5" fill="#4a4d4f"/>
+  <rect x="1254" y="640" width="90" height="10" rx="5" fill="#3a3d3f"/>
+  <rect x="1254" y="660" width="70" height="10" rx="5" fill="#3a3d3f"/>
+  <rect x="1418" y="620" width="110" height="10" rx="5" fill="#4a4d4f"/>
+
+  <!-- bottom strip cards -->
+  <rect x="256" y="758" width="760" height="150" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="290" y="790" width="180" height="14" rx="7" fill="#8a8d8f"/>
+  <rect x="290" y="818" width="340" height="30" rx="8" fill="#f7f7f2"/>
+  <rect x="670" y="790" width="120" height="14" rx="7" fill="#8a8d8f"/>
+  <rect x="670" y="818" width="220" height="30" rx="8" fill="#d7ed57"/>
+  <rect x="1040" y="758" width="536" height="150" rx="18" fill="#191b1c" stroke="#2a2d2f"/>
+  <rect x="1072" y="790" width="220" height="14" rx="7" fill="#8a8d8f"/>
+  <rect x="1072" y="818" width="440" height="30" rx="8" fill="#3fc7bd"/>
+</svg>

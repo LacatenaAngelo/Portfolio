@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anteprima del caso Mapwell con moduli geografici e KPI">
+  <defs>
+    <linearGradient id="mapbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132038"/>
+      <stop offset="100%" stop-color="#0b1526"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#mapbg)"/>
+
+  <!-- abstract map grid -->
+  <g stroke="rgba(125,155,240,.22)" stroke-width="1.5">
+    <path d="M40,60 L120,140 L90,240 L180,300 L150,400" fill="none"/>
+    <path d="M220,50 L260,160 L340,190 L300,320 L380,400" fill="none"/>
+    <path d="M420,70 L460,180 L520,150 L560,260 L640,240" fill="none"/>
+  </g>
+  <g fill="rgba(49,95,212,.18)">
+    <polygon points="40,60 120,140 90,240 20,190"/>
+    <polygon points="220,50 260,160 180,300 150,150"/>
+    <polygon points="420,70 460,180 380,400 300,320 340,190"/>
+    <polygon points="520,150 560,260 640,240 600,120"/>
+  </g>
+
+  <!-- pins -->
+  <g>
+    <circle cx="120" cy="140" r="10" fill="#315fd4"/>
+    <circle cx="260" cy="160" r="10" fill="#d7ed57"/>
+    <circle cx="460" cy="180" r="10" fill="#315fd4"/>
+    <circle cx="560" cy="260" r="10" fill="#f0573f"/>
+    <circle cx="300" cy="320" r="10" fill="#315fd4"/>
+  </g>
+
+  <!-- KPI cards -->
+  <rect x="60" y="330" width="220" height="110" rx="14" fill="#101a30" stroke="rgba(247,247,242,.12)"/>
+  <rect x="86" y="356" width="120" height="14" rx="7" fill="rgba(247,247,242,.55)"/>
+  <rect x="86" y="384" width="80" height="28" rx="6" fill="#7d9bf0"/>
+
+  <rect x="310" y="330" width="220" height="110" rx="14" fill="#101a30" stroke="rgba(247,247,242,.12)"/>
+  <rect x="336" y="356" width="120" height="14" rx="7" fill="rgba(247,247,242,.55)"/>
+  <rect x="336" y="384" width="120" height="28" rx="6" fill="#d7ed57"/>
+
+  <rect x="560" y="330" width="180" height="110" rx="14" fill="#101a30" stroke="rgba(247,247,242,.12)"/>
+  <rect x="586" y="356" width="110" height="14" rx="7" fill="rgba(247,247,242,.55)"/>
+  <rect x="586" y="384" width="70" height="28" rx="6" fill="#f0573f"/>
+
+  <rect x="60" y="46" width="260" height="26" rx="13" fill="#315fd4"/>
+</svg>
