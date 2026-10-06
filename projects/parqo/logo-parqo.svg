@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PARQO">
+  <defs>
+    <linearGradient id="sfondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9582ff"/>
+      <stop offset="1" stop-color="#5a3ee6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#sfondo)"/>
+  <!-- P con l'anello della Q: asta, anello e codina -->
+  <g fill="none" stroke="#fff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 50V26"/>
+    <circle cx="32.5" cy="26" r="12.5"/>
+    <path d="M41.3 34.8l7.2 7.2"/>
+  </g>
+</svg>

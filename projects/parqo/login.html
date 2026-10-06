@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accesso · PARQO · Demo</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="logo-parqo.svg">
+  <link rel="apple-touch-icon" href="logo-parqo-180.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="demo-dati.js"></script>
+  <script src="demo.js"></script>
+  <link rel="prefetch" href="demo-ritagli.js">
+  <link rel="prefetch" href="demo-foto.js">
+  <script src="tema.js"></script>
+</head>
+<body class="pagina-accesso">
+  <main class="accesso">
+    <div class="accesso-card">
+      <div class="accesso-marchio">
+        <img src="logo-parqo.svg" alt="" width="44" height="44">
+        <div><strong>PARQO</strong></div>
+      </div>
+
+      <!-- Primo avvio: si crea il founder -->
+      <form id="formConfigura" class="accesso-form" hidden>
+        <h1>Benvenuto!</h1>
+        <p class="nota">Primo avvio: crea il tuo account <strong>Founder</strong>. Potrai poi creare gli altri utenti e assegnare i ruoli.</p>
+        <label>Nome e cognome<input name="nome" autocomplete="name" required></label>
+        <label>Email<input name="username" type="email" autocomplete="email" required></label>
+        <label>Password (almeno 8 caratteri)<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Ripeti la password<input name="conferma" type="password" autocomplete="new-password" minlength="8" required></label>
+        <p class="accesso-errore" role="alert"></p>
+        <button class="btn primario largo" type="submit">Crea account e entra</button>
+      </form>
+
+      <!-- Accesso -->
+      <form id="formAccedi" class="accesso-form" hidden>
+        <h1>Accedi</h1>
+        <p class="nota" id="notaChiusa" hidden>Sei stato scollegato da PARQO: accedi di nuovo. Se non riesci, il tuo account potrebbe essere stato bloccato.</p>
+        <label>Email<input name="username" autocomplete="username" required autofocus></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <p class="accesso-errore" role="alert"></p>
+        <button class="btn primario largo" type="submit">Accedi</button>
+        <p class="accesso-cambia"><button type="button" class="link" data-vai="dimenticata">Ho dimenticato la password</button></p>
+        <p class="accesso-cambia">Non hai un account? <button type="button" class="link" data-vai="formRegistra">Registrati</button></p>
+      </form>
+
+      <!-- Secondo passaggio: codice dell'app sul telefono -->
+      <form id="formCodice" class="accesso-form" hidden>
+        <h1>Verifica in due passaggi</h1>
+        <p class="nota" id="testoCodice">Apri l'app di autenticazione sul telefono e scrivi il codice di 6 cifre di PARQO.</p>
+        <label><span id="etichettaCodice">Codice di verifica</span><input name="codice" id="campoCodice" inputmode="numeric" autocomplete="one-time-code" maxlength="9" required></label>
+        <p class="accesso-errore" role="alert"></p>
+        <button class="btn primario largo" type="submit">Verifica ed entra</button>
+        <p class="accesso-cambia"><button type="button" class="link" id="usaRecupero">Ho perso il telefono: uso un codice di recupero</button></p>
+        <p class="accesso-cambia"><button type="button" class="link" data-vai="formAccedi">Torna all'accesso</button></p>
+      </form>
+
+      <!-- Richiesta di accesso -->
+      <form id="formRegistra" class="accesso-form" hidden>
+        <h1>Crea il tuo account</h1>
+        <p class="nota">Registri la tua azienda: avrai uno spazio tutto tuo, con i tuoi parcheggi. Sarà attivo dopo la verifica di PARQO. Se lavori in un'azienda che usa già PARQO, chiedi al responsabile di crearti l'account.</p>
+        <label>Nome dell'azienda<input name="nomeAzienda" autocomplete="organization" required></label>
+        <label>Nome e cognome<input name="nome" autocomplete="name" required></label>
+        <label>Email<input name="username" type="email" autocomplete="email" required></label>
+        <label>Password (almeno 8 caratteri)<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Ripeti la password<input name="conferma" type="password" autocomplete="new-password" minlength="8" required></label>
+        <p class="accesso-errore" role="alert"></p>
+        <button class="btn primario largo" type="submit">Crea account</button>
+        <p class="accesso-cambia">Hai già un account? <button type="button" class="link" data-vai="formAccedi">Accedi</button></p>
+      </form>
+
+      <!-- Password dimenticata -->
+      <div id="dimenticata" class="accesso-form" hidden>
+        <h1>Password dimenticata</h1>
+        <p>Chiedi a un <strong>amministratore</strong> di PARQO di reimpostarla: dalla sezione <em>Utenti</em> preme <em>Reimposta password</em> e ti comunica quella nuova.</p>
+        <p>Dopo l'accesso potrai cambiarla con il pulsante a forma di chiave in alto.</p>
+        <p class="nota"><strong>Sei il Founder?</strong> Sul PC dell'ufficio chiudi la finestra nera di PARQO e apri <strong>RecuperaPassword.bat</strong> nella cartella di PARQO: ti chiederà la password nuova.</p>
+        <button type="button" class="btn primario largo" data-vai="formAccedi">Torna all'accesso</button>
+      </div>
+
+      <!-- In attesa di approvazione -->
+      <div id="attesa" class="accesso-form" hidden>
+        <h1 id="attesaTitolo">Richiesta inviata</h1>
+        <p>Ciao <strong id="attesaNome"></strong>, <span id="attesaTesto">la tua richiesta di accesso è arrivata.</span></p>
+        <p class="nota" id="attesaNota">Un amministratore deve assegnarti un ruolo. Quando sarà fatto, ricarica questa pagina.</p>
+        <div class="accesso-azioni">
+          <button type="button" class="btn primario" id="ricontrolla">Controlla di nuovo</button>
+          <button type="button" class="btn contorno" id="esci">Esci</button>
+        </div>
+      </div>
+    </div>
+    <p class="accesso-firma">Realizzato da <a href="https://lacatenaangelo.it" target="_blank" rel="noopener">Angelo Lacatena®</a></p>
+  </main>
+  <script src="accesso.js"></script>
+</body>
+</html>
