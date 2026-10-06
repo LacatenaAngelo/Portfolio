@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anteprima del caso Flowline con funnel e dashboard">
+  <defs>
+    <linearGradient id="flowbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12312e"/>
+      <stop offset="100%" stop-color="#0b1f1d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#flowbg)"/>
+
+  <rect x="40" y="40" width="300" height="26" rx="13" fill="#118a83"/>
+  <rect x="40" y="80" width="180" height="14" rx="7" fill="rgba(247,247,242,.5)"/>
+
+  <!-- funnel -->
+  <g>
+    <polygon points="60,150 380,150 330,220 110,220" fill="#19b4a5" opacity="0.92"/>
+    <polygon points="110,228 330,228 296,286 144,286" fill="#3fc7bd" opacity="0.86"/>
+    <polygon points="144,294 296,294 270,352 170,352" fill="#8fe0d6" opacity="0.8"/>
+    <polygon points="170,360 270,360 250,410 190,410" fill="#d7ed57"/>
+  </g>
+  <text x="60" y="145" fill="rgba(247,247,242,.65)" font-family="Arial" font-size="16">Visite</text>
+  <text x="330" y="223" fill="rgba(247,247,242,.65)" font-family="Arial" font-size="16" text-anchor="end">Trial</text>
+  <text x="296" y="289" fill="rgba(247,247,242,.65)" font-family="Arial" font-size="16" text-anchor="end">Attivi</text>
+  <text x="270" y="355" fill="rgba(247,247,242,.65)" font-family="Arial" font-size="16" text-anchor="end">Paganti</text>
+
+  <!-- dashboard column -->
+  <rect x="440" y="130" width="320" height="300" rx="18" fill="#0f2422" stroke="rgba(247,247,242,.12)"/>
+  <rect x="466" y="158" width="140" height="16" rx="8" fill="rgba(247,247,242,.7)"/>
+  <rect x="466" y="196" width="268" height="70" rx="12" fill="#123a36"/>
+  <rect x="486" y="216" width="90" height="12" rx="6" fill="rgba(247,247,242,.4)"/>
+  <rect x="486" y="238" width="150" height="18" rx="6" fill="#d7ed57"/>
+
+  <rect x="466" y="282" width="268" height="120" rx="12" fill="#123a36"/>
+  <polyline points="486,372 520,340 556,356 592,312 628,330 664,296 700,318" fill="none" stroke="#3fc7bd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="700" cy="318" r="6" fill="#d7ed57"/>
+</svg>

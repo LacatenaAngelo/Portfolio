@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Angelo Lacatena — Junior Web Developer</title>
+    <meta
+      name="description"
+      content="Portfolio di Angelo Lacatena, aspirante sviluppatore web junior: progetti front-end, giochi in HTML5 Canvas e percorso professionale."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Salta al contenuto</a>
+
+    <header class="nav" data-header>
+      <a class="nav-brand" href="#top">
+        <span class="nav-mark" aria-hidden="true">AL</span>
+        <span class="nav-name">Angelo Lacatena</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigazione principale">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#percorso">Percorso</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <a class="nav-status" href="#contatti">
+        <span class="dot" aria-hidden="true"></span>
+        Disponibile ora
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow reveal-load" style="--d: 0">Scheda tecnica — Junior Web Developer</p>
+            <h1 class="reveal-load" style="--d: 1">Costruisco cose che funzionano.</h1>
+            <p class="hero-sub reveal-load" style="--d: 2">
+              Sono Angelo Lacatena, diplomato in Informatica e Telecomunicazioni.
+              Nel tempo libero mi metto al computer e costruisco: siti, giochi,
+              piccoli esperimenti &mdash; imparo cos&igrave;, provando e rifacendo
+              finch&eacute; non funzionano davvero.
+            </p>
+            <div class="hero-actions reveal-load" style="--d: 3">
+              <a class="btn btn-primary" href="#progetti">Guarda i progetti</a>
+              <a class="btn btn-ghost" href="#contatti">Scrivimi</a>
+            </div>
+            <ul class="hero-facts reveal-load" style="--d: 4">
+              <li><strong>4</strong><span>progetti pubblicati</span></li>
+              <li><strong>5</strong><span>esperienze lavorative</span></li>
+              <li><strong>B2</strong><span>inglese</span></li>
+              <li><strong>Patente&nbsp;B</strong><span>automunito</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-photo reveal-load" style="--d: 2">
+            <div class="id-badge">
+              <span class="reg-mark corner-tl" aria-hidden="true"></span>
+              <span class="reg-mark corner-tr" aria-hidden="true"></span>
+              <span class="reg-mark corner-bl" aria-hidden="true"></span>
+              <span class="reg-mark corner-br" aria-hidden="true"></span>
+              <img src="assets/profile.jpg" alt="Foto di Angelo Lacatena" width="250" height="250" />
+              <div class="id-caption">
+                <span>A. LACATENA</span>
+                <span>LODI, IT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="chi-sono">
+        <div class="section-head reveal">
+          <p class="eyebrow">Chi sono</p>
+          <h2>Oltre il curriculum.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              Sono diplomato in <strong>Informatica e Telecomunicazioni</strong>,
+              ma la parte pi&ugrave; vera di me si vede meglio nel tempo libero:
+              apro l'editor di codice e costruisco qualcosa, senza che nessuno me
+              lo chieda. Siti, giochi, piccoli esperimenti &mdash; ne ho fatti
+              cos&igrave; tanti che ho perso il conto.
+            </p>
+            <p>
+              Sono curioso e testardo: se una cosa non funziona come voglio, ci
+              riprovo finch&eacute; non funziona. E soprattutto adoro fare siti
+              web &mdash; &egrave; la parte a cui dedico pi&ugrave; tempo del
+              dovuto, ed &egrave; anche il motivo per cui sono qui.
+            </p>
+          </div>
+          <div class="toolbox reveal">
+            <div class="tool-group">
+              <p class="tool-label">Linguaggi</p>
+              <div class="tool-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>SQL</span>
+                <span>C++</span>
+              </div>
+            </div>
+            <div class="tool-group">
+              <p class="tool-label">Strumenti</p>
+              <div class="tool-tags">
+                <span>GitHub Pages</span>
+                <span>Pacchetto Office</span>
+                <span>DevTools</span>
+              </div>
+            </div>
+            <div class="tool-group">
+              <p class="tool-label">Lingue</p>
+              <div class="tool-tags">
+                <span>Italiano — madrelingua</span>
+                <span>Inglese — B2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="progetti">
+        <div class="section-head reveal">
+          <p class="eyebrow">Officina</p>
+          <h2>Quattro progetti, quattro modi di imparare facendo.</h2>
+        </div>
+
+        <div class="ticket-grid">
+          <article class="ticket reveal">
+            <div class="ticket-top">
+              <span class="ticket-no">N.01</span>
+              <span class="stamp stamp-live">Demo live</span>
+            </div>
+            <h3>Neon Drift</h3>
+            <p class="ticket-tagline">Endless runner arcade, canvas puro.</p>
+            <p class="ticket-copy">
+              Un runner arcade in HTML5 Canvas: schiva gli ostacoli, raccogli i core
+              per ricaricare l'energia e attiva la Phase per attraversarli in un
+              attimo. Loop di gioco a requestAnimationFrame, particelle, trail
+              dinamici e un motore audio scritto da zero con la Web Audio API &mdash;
+              nessun file mp3, solo oscillatori.
+            </p>
+            <div class="tags">
+              <span>HTML5 Canvas</span>
+              <span>JavaScript</span>
+              <span>Web Audio API</span>
+            </div>
+            <div class="ticket-actions">
+              <a class="btn btn-primary btn-sm" href="projects/neon-drift/index.html" target="_blank" rel="noopener">
+                Gioca ora &nearr;
+              </a>
+            </div>
+          </article>
+
+          <article class="ticket reveal">
+            <div class="ticket-top">
+              <span class="ticket-no">N.02</span>
+              <span class="stamp stamp-live">Demo live</span>
+            </div>
+            <h3>Kairo OS</h3>
+            <p class="ticket-tagline">Landing page prodotto, taglio editoriale.</p>
+            <p class="ticket-copy">
+              Portfolio-prodotto per una piattaforma SaaS immaginaria: griglia
+              editoriale, hero con parallax leggero al movimento del puntatore,
+              contatori animati e sezioni che appaiono allo scroll via
+              IntersectionObserver. Costruito in HTML, CSS e JavaScript, senza
+              framework.
+            </p>
+            <div class="tags">
+              <span>HTML5</span>
+              <span>CSS Grid</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="ticket-actions">
+              <a class="btn btn-primary btn-sm" href="projects/kairo-os/index.html" target="_blank" rel="noopener">
+                Apri demo &nearr;
+              </a>
+            </div>
+          </article>
+
+          <article class="ticket reveal">
+            <div class="ticket-top">
+              <span class="ticket-no">N.03</span>
+              <span class="stamp stamp-published">Pubblicato</span>
+            </div>
+            <h3 class="ticket-title-with-logo">
+              <img src="assets/emobicity-logo.png" alt="" class="ticket-logo" />
+              E-mobicity
+            </h3>
+            <p class="ticket-tagline">Progetto scolastico, online davvero.</p>
+            <p class="ticket-copy">
+              Sito per un progetto di classe sulla mobilit&agrave; sostenibile,
+              realizzato con l'IIS Alessandro Volta di Lodi e pubblicato su GitHub
+              Pages. Il mio contributo: struttura della pagina e sezione dedicata al
+              prototipo di mezzo condiviso.
+            </p>
+            <div class="tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Lavoro di squadra</span>
+            </div>
+            <div class="ticket-actions">
+              <a class="btn btn-primary btn-sm" href="https://emobicity.github.io/" target="_blank" rel="noopener">
+                Visita il sito &nearr;
+              </a>
+            </div>
+          </article>
+
+          <article class="ticket ticket-wip reveal">
+            <div class="ticket-top">
+              <span class="ticket-no">N.04</span>
+              <span class="stamp stamp-wip">In lavorazione</span>
+            </div>
+            <h3>Flash City Rush</h3>
+            <p class="ticket-tagline">Mini open world, stile Flash game.</p>
+            <p class="ticket-copy">
+              Un prototipo di gioco open-world top-down in stile vecchi giochi
+              Flash: mappa cittadina, guida, HUD con livello di ricercato e missioni
+              di consegna veloci. Struttura, HUD e mappa sono pronti; il motore di
+              gioco &egrave; ancora in lavorazione.
+            </p>
+            <div class="tags">
+              <span>HTML5 Canvas</span>
+              <span>JavaScript</span>
+              <span>CSS</span>
+            </div>
+            <div class="ticket-actions">
+              <a class="btn btn-ghost btn-sm" href="projects/flash-city-rush/index.html" target="_blank" rel="noopener">
+                Anteprima struttura &nearr;
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="timeline" id="percorso">
+        <div class="section-head reveal">
+          <p class="eyebrow">Percorso</p>
+          <h2>Ruoli diversi. La stessa affidabilit&agrave;.</h2>
+        </div>
+
+        <ol class="rail">
+          <li class="rail-item reveal">
+            <span class="rail-date">2018 &ndash; 2024</span>
+            <div class="rail-body">
+              <h3>Diploma Informatico &amp; Telecomunicazioni</h3>
+              <p>IIS Alessandro Volta &middot; Lodi</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Mar 2022</span>
+            <div class="rail-body">
+              <h3>Alternanza scuola-lavoro</h3>
+              <p>Cittadino di Lodi &middot; raccolta informazioni e pubblicazione di un giornale</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Giu &ndash; Lug 2023</span>
+            <div class="rail-body">
+              <h3>Cameriere</h3>
+              <p>Pizzeria Del Ponte &middot; Milano</p>
+            </div>
+          </li>
+          <li class="rail-item rail-item-highlight reveal">
+            <span class="rail-date">Dic 2023 &ndash; oggi</span>
+            <div class="rail-body">
+              <h3>Alternanza scuola-lavoro &mdash; progetto Zucchetti</h3>
+              <p>IIS Alessandro Volta &amp; Zucchetti &middot; design e prototipo di un Registro Elettronico, in team</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Nov 2024 &ndash; Giu 2025</span>
+            <div class="rail-body">
+              <h3>Elettricista</h3>
+              <p>Davide Rossetti &middot; Sesto Ulteriano &middot; manutenzione e installazione di impianti elettrici e di condizionamento</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Giu &ndash; Lug 2025</span>
+            <div class="rail-body">
+              <h3>Magazziniere</h3>
+              <p>M.I.B. &middot; Peschiera Borromeo &middot; gestione magazzino, ordini e consegne</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Set &ndash; Dic 2025</span>
+            <div class="rail-body">
+              <h3>Team ristorazione veloce</h3>
+              <p>miscusi &middot; Peschiera Borromeo &middot; gestione negozio, cassa e rapporto con i clienti</p>
+            </div>
+          </li>
+          <li class="rail-item reveal">
+            <span class="rail-date">Gen &ndash; Apr 2026</span>
+            <div class="rail-body">
+              <h3>Magazziniere</h3>
+              <p>Mapei SpA &middot; Mediglia &middot; preparazione bancali e guida del retrattile</p>
+            </div>
+          </li>
+          <li class="rail-item rail-item-open reveal">
+            <span class="rail-date">Ora</span>
+            <div class="rail-body">
+              <h3>Disponibile per nuove opportunit&agrave;</h3>
+              <p>Sviluppo web junior o supporto IT</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="contact" id="contatti">
+        <div class="contact-panel reveal">
+          <p class="eyebrow">Prossimo passo</p>
+          <h2>Cerco la mia prima occasione da sviluppatore web junior.</h2>
+          <p>
+            Se hai un progetto o un ruolo dove posso essere utile, scrivimi: rispondo
+            volentieri e sono disponibile a breve.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:angelo.lacatena.027@gmail.com">
+              angelo.lacatena.027@gmail.com
+            </a>
+            <a class="btn btn-ghost" href="tel:+393314370727">+39 331 437 0727</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Angelo Lacatena &middot; provincia di Lodi, Italia</span>
+      <div class="footer-links">
+        <a href="https://github.com/TUO-USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/TUO-PROFILO" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

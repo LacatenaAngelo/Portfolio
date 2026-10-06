@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratica legale · PARQO · Demo</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="logo-parqo.svg">
+  <link rel="apple-touch-icon" href="logo-parqo-180.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="demo-dati.js"></script>
+  <script src="demo.js"></script>
+  <script src="demo-ritagli.js"></script>
+  <script src="tema.js"></script>
+</head>
+<body class="pagina-consulta">
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-cerca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-scudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-luna" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-sole" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></symbol>
+    <symbol id="i-scarica" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-esci" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-chiave" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+  </svg>
+  <header class="consulta-testa">
+    <div class="marchio">
+      <img src="logo-parqo.svg" alt="" width="34" height="34">
+      <span class="marchio-nome">PARQO</span>
+    </div>
+    <label class="ricerca">
+      <svg><use href="#i-cerca"/></svg>
+      <input type="search" id="cerca" placeholder="Cerca targa o n. avviso…" autocomplete="off">
+    </label>
+    <div class="barra-destra">
+      <button type="button" class="icona-btn" id="bottoneTema" title="Tema scuro" aria-label="Passa al tema scuro"><svg><use href="#i-luna"/></svg></button>
+      <button type="button" class="icona-btn" id="bottoneDueFattori" aria-label="Verifica in due passaggi"><svg><use href="#i-scudo"/></svg></button>
+      <button type="button" class="icona-btn" id="bottonePassword" title="Cambia password" aria-label="Cambia password"><svg><use href="#i-chiave"/></svg></button>
+      <div class="profilo"><div><strong id="nomeUtente"></strong><span id="ruoloUtente"></span></div></div>
+      <button type="button" class="btn contorno" id="esci"><svg><use href="#i-esci"/></svg><span>Esci</span></button>
+    </div>
+  </header>
+  <div class="anteprima" id="anteprima" hidden>
+    <span><strong>Anteprima:</strong> stai vedendo PARQO come lo vede un Visualizzatore.</span>
+    <a class="btn primario" href="index.html#recupero">Esci dall'anteprima</a>
+  </div>
+  <main class="consulta">
+    <div class="vista-testa">
+      <h1>Pratica legale</h1>
+      <span class="conteggio-grande" id="conteggio"></span>
+      <div class="azioni">
+        <a class="btn primario" href="report-legale" id="scaricaLegale"><svg><use href="#i-scarica"/></svg><span>Scarica elenco (Excel)</span></a>
+      </div>
+    </div>
+    <div class="card tabella-card">
+      <div class="scorri">
+        <table class="tabella">
+          <thead><tr><th>Avviso</th><th>Targa</th><th>Data multa</th><th>Proprietario</th><th>Diffida</th><th>Affidata il</th><th>Importo dovuto</th><th>Situazione</th><th class="stretta"></th></tr></thead>
+          <tbody id="righe"></tbody>
+        </table>
+        <p class="vuoto" id="vuoto" hidden>Nessuna pratica legale al momento.</p>
+      </div>
+      <div class="tabella-piede"><span>Multe con diffida scaduta senza pagamento, affidate a pratica legale. In verde quelle pagate dopo l'affidamento: la pratica va chiusa.</span><span>Realizzato da Angelo Lacatena®</span></div>
+    </div>
+  </main>
+
+  <dialog id="finestraFoto" class="finestra">
+    <div class="finestra-testa">
+      <strong id="finestraTitolo"></strong>
+      <button type="button" class="btn contorno" id="bottoneChiudi">Chiudi</button>
+    </div>
+    <img id="finestraImmagine" alt="Foto della multa">
+  </dialog>
+  <div class="suggerimento" id="suggerimento" hidden></div>
+  <script src="finestra.js"></script>
+  <script src="duefattori.js"></script>
+  <script src="consulta.js"></script>
+  <script src="demo-foto.js" async></script>
+</body>
+</html>
